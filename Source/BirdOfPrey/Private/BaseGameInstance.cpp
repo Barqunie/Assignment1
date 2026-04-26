@@ -2,13 +2,12 @@
 
 #include "BaseGameInstance.h"
 
-void UBaseGameInstance::SetPlayerAgentInfoFor(int PlayerControllerID, FSAgentInfo& info)
+void UBaseGameInstance::SetPlayerAgentInfoFor(int32 PlayerControllerID, const FSAgentInfo& AgentInfo)
 {
-
+	// Empty for C++ conversion assignment
 }
 
-FSAgentInfo& UBaseGameInstance::GetPlayerAgentInfoFor(int PlayerControllerID, bool& Result)
+FSAgentInfo UBaseGameInstance::GetPlayerAgentInfoFor(int32 PlayerControllerID, bool& bSuccess) const
 {
-	Result = false;
-	return PlayerAgentInfo[PlayerControllerID];
+	return FSAgentInfo();
 }

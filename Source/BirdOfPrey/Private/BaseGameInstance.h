@@ -4,47 +4,25 @@
 
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
+#include "AgentData/AgentInfo.h"
 #include "BaseGameInstance.generated.h"
 
-USTRUCT(BlueprintType)
-struct FSAgentInfo
-{
-    GENERATED_BODY()
-
-public:
-    UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
-    FText Name;
-
-    UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
-    TSubclassOf<AActor> BaseWeaponType;
-
-    UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
-    USkeletalMesh* SkeletalMesh;
-
-    UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
-    UAnimInstance* AnimInstance;
-
-    UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
-    UTexture2D* Image;    
-};
-
-/**
- * 
- */
 UCLASS()
-class UBaseGameInstance : public UGameInstance
+class BIRDOFPREY_API UBaseGameInstance : public UGameInstance
 {
-    GENERATED_BODY()
+	GENERATED_BODY()
 
 public:
 
-    UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
-    TArray<FSAgentInfo> PlayerAgentInfo;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BirdsOfPrey")
+	TArray<FSAgentInfo> PlayerAgentInfo;
 
-    UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-    void SetPlayerAgentInfoFor(int PlayerControllerID, FSAgentInfo& info);
+	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
+	void SetPlayerAgentInfoFor(int32 PlayerControllerID, const FSAgentInfo& AgentInfo);
 
-    UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-    FSAgentInfo& GetPlayerAgentInfoFor(int PlayerControllerID, bool &Result);
-	
+	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
+	FSAgentInfo GetPlayerAgentInfoFor(
+		int32 PlayerControllerID,
+		UPARAM(DisplayName = "Success") bool& bSuccess
+	) const;
 };
