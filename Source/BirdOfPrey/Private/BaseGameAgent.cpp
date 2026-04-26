@@ -34,7 +34,7 @@ void ABaseGameAgent::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 }
 
-void ABaseGameAgent::ChangeWeaponType()
+void ABaseGameAgent::ChangeWeaponType(TArray<ABaseWeapon*> NewWeaponType)
 {
 }
 
@@ -57,17 +57,17 @@ void ABaseGameAgent::StopFire()
 {
 }
 
-float ABaseGameAgent::TakeDamage(float damageAmount)
+float ABaseGameAgent::TakeDamage(float damageAmount ,float& actualDamage)
 {
-	return 0.0f;
+	return actualDamage;
 }
 
-bool ABaseGameAgent::IsAlive()
+bool ABaseGameAgent::IsAlive(bool& bAlive)
 {
-	return false;
+	return bAlive;
 }
 
-void ABaseGameAgent::Died(UObject* Killer)
+void ABaseGameAgent::Died(AController* Killer)
 {
 }
 

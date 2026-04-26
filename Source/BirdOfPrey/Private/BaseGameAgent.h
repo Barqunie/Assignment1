@@ -86,11 +86,11 @@ public:
 	float points;
 
 
-	// Getter and Setter functions for weapon
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void  ChangeWeaponType();
 
-	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "BirdsOfPrey")
+	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
+	void  ChangeWeaponType(TArray<ABaseWeapon*> NewWeaponType);
+
+	UFUNCTION(BlueprintPure, Category = "BirdsOfPrey")
 	FTransform GetWeaponSpawnTransform() const;
 
 	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
@@ -107,13 +107,13 @@ public:
 	void  StopFire();
 
 	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	virtual float  TakeDamage(float damageAmount);
+	virtual float  TakeDamage(float damageAmount,float&  actualDamage);
+
+	UFUNCTION(BlueprintPure, Category = "BirdsOfPrey")
+	bool  IsAlive(bool& bAlive);
 
 	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	bool  IsAlive();
-
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void  Died(UObject*	 Killer);
+	void  Died(AController*	 Killer);
 
 	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
 	void  PlayHitEffects();

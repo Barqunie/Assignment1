@@ -41,7 +41,7 @@ public:
 	UFUNCTION(BlueprintPure, Category = "BirdsOfPrey")
 	bool HasDiedRecently();
 
-	virtual float  TakeDamage(float damageAmount) override;
+	virtual float  TakeDamage(float damageAmount, float& actualDamage) override;
 
 
 

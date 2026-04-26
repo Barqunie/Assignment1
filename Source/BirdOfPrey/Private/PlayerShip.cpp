@@ -39,7 +39,7 @@ bool APlayerShip::HasDiedRecently()
 	return false;
 }
 
-float APlayerShip::TakeDamage(float damageAmount)
+float APlayerShip::TakeDamage(float damageAmount, float& actualDamage)
 {
 	return 0.0f;
 }
