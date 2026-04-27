@@ -77,7 +77,7 @@ DerivedDataCache/*
 
 /Content/StarterContent
 /Content/Collections
-/Content/Collections/BirdOfPrey/Cinematics
-/Content/Collections/BirdOfPrey/Resources
-/Content/Collections/BirdOfPrey/Maps
-/Content/Collections/BirdOfPrey/UI
+/Content/BirdOfPrey/Cinematics
+/Content/BirdOfPrey/Resources
+/Content/BirdOfPrey/Maps
+/Content/BirdOfPrey/UI
