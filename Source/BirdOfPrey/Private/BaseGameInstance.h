@@ -21,7 +21,7 @@ public:
 	void SetPlayerAgentInfoFor(int32 PlayerControllerID, const FSAgentInfo& AgentInfo);
 
 	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	FSAgentInfo GetPlayerAgentInfoFor(
+	FSAgentInfo GetPlayerAgentInfo(
 		int32 PlayerControllerID,
 		UPARAM(DisplayName = "Success") bool& bSuccess
 	) const;
